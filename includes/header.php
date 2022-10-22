@@ -28,7 +28,7 @@
 <div class="header">
     <div class="container">
         <div class="row inner">
-            <div class="col-md-7 logo">
+            <div class="col-md-6 logo">
                 <a href="index"><img src="assets/uploads/malki.png" alt="logo image"></a>
             </div>
 
@@ -45,12 +45,47 @@
                 </form>
             </div>
 
-            <div class="col-md-2 right">
+            <div class="col-md-3 right">
                 <ul>
 
-                    <li><a href="login"><i class="fa fa-sign-in"></i> Login</a></li>
 
-                    <li><a href="cart"><i class="fa fa-shopping-cart"></i> </a></li>
+                    <?php
+                    if (isset($_SESSION['client'])) {
+                        ?>
+                        <ul class="list-inline margin-clear pull-right">
+                            <li><a href="manager/logout.php"><?php echo $_SESSION['username']; ?></a></li>
+
+                        </ul>
+                        <?php
+                    } else {
+                        ?>
+                        <li><a href="login"><i class="fa fa-sign-in"></i> Se connecter</a></li>
+                        <?php
+                    }
+                    ?>
+
+
+
+                    <?php
+                    if (isset($_SESSION['cart'])) {
+                        $cout = 0;
+                        foreach($_SESSION['cart'] as $key => $value)
+                        {
+                            $cout = $cout + $value['prix'] * $value['quantite'];
+                        }
+                        ?>
+                        <li class="dropdown cart-menu-body
+                                        paira-cart-menu-body">
+                            <a href="cart.php" class="padding-bottom-10"><i class="fa fa-shopping-cart"></i>
+                                <span class="paira-cart-total-price"><span class="money"><?php echo number_format($cout) ?> $</span></span>
+                                <span class="badge
+                                                paira-cart-item-count"><?php echo count($_SESSION['cart']) ?></span></a>
+                        </li>
+                        <?php
+                    }
+                    ?>
+
+
                 </ul>
             </div>
         </div>

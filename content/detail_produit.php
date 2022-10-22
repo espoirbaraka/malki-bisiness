@@ -41,22 +41,23 @@ $allproduit = $app->fetchPrepared($req2);
                                 <p><?php echo $produit['Description'] ?></p>
                                 </p>
                             </div>
-                            <form action="#" method="post">
+                            <form action="manager/add_cart.php?id=<?php echo $produit['CodeProduit'] ?>" method="post">
 
                                 <div class="p-price">
                                     <span style="font-size:14px;">Prix</span><br>
                                     <span><?php echo $produit['Prix'] ?> $</span>
                                 </div>
-                                <input type="hidden" name="p_current_price" value="20">
-                                <input type="hidden" name="p_name" value="Star Wars Darth Vader">
-                                <input type="hidden" name="p_featured_photo" value="product-featured-1.html">
+                                <input type="hidden" name="code" value="<?php echo $produit['CodeProduit'] ?>">
+                                <input type="hidden" name="name" value="<?php echo $produit['Produit'] ?>">
+                                <input type="hidden" name="prix" value="<?php echo $produit['Prix'] ?>">
+                                <input type="hidden" name="image" value="<?php echo $produit['Photo'] ?>">
                                 <div class="p-quantity">
                                     Quantité <br>
-                                    <input type="number" class="input-text qty" step="1" min="1" max="" name="p_qty"
+                                    <input type="number" class="input-text qty" step="1" min="1" max="" name="quantite"
                                            value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="btn-cart btn-cart1">
-                                    <input type="submit" value="Ajouter au panier" name="form_add_to_cart">
+                                    <input type="submit" value="Ajouter au panier" name="add">
                                 </div>
                             </form>
 

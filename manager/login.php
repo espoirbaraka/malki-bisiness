@@ -19,7 +19,6 @@
 				$_SESSION['username'] = $row['Username'];
 				$_SESSION['email'] = $row['Email'];
 				$_SESSION['categorie'] = $row['CodeCategorie'];
-				
 			}
 			else{
 				$_SESSION['error'] = 'Mot de passe incorrect';

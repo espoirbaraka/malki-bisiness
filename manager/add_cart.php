@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'bd_class.php';
-if(isset($_POST['add_cart'])){
+if(isset($_POST['add'])){
     $prod = $_POST['code'];
     if(isset($_SESSION['cart'])){
         $session_array = array_column($_SESSION['cart'], "id");
