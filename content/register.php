@@ -11,61 +11,56 @@
                 <div class="user-content">
 
 
-                    <form action="#" method="post">
-                        <input type="hidden" name="_csrf" value="3f3b81eac541de9fd38d942dd0676aae"/>
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8">
+                <form action="manager/register.php" method="post">
 
+                    <input type="hidden" name="_csrf" value="3f3b81eac541de9fd38d942dd0676aae"/>
+                    <div class="row">
 
-                                <div class="col-md-6 form-group">
-                                    <label for="">Full Name *</label>
-                                    <input type="text" class="form-control" name="cust_name" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Company Name</label>
-                                    <input type="text" class="form-control" name="cust_cname" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Email Address *</label>
-                                    <input type="email" class="form-control" name="cust_email" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Phone Number *</label>
-                                    <input type="text" class="form-control" name="cust_phone" value="">
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <label for="">Address *</label>
-                                    <textarea name="cust_address" class="form-control" cols="30" rows="10"
-                                              style="height:70px;"></textarea>
-                                </div>
+                        <div class="col-md-4">
 
-                                <div class="col-md-6 form-group">
-                                    <label for="">City *</label>
-                                    <input type="text" class="form-control" name="cust_city" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">State *</label>
-                                    <input type="text" class="form-control" name="cust_state" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Zip Code *</label>
-                                    <input type="text" class="form-control" name="cust_zip" value="">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Password *</label>
-                                    <input type="password" class="form-control" name="cust_password">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="">Retype Password *</label>
-                                    <input type="password" class="form-control" name="cust_re_password">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for=""></label>
-                                    <input type="submit" class="btn btn-primary" value="Register" name="form1">
-                                </div>
-                            </div>
                         </div>
+                        <div class="col-md-4">
+                            <?php
+                            if(isset($_SESSION['error'])){
+                                echo "
+                                    <div class='alert alert-danger alert-dismissible'>
+                                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                    <h4><i class='icon fa fa-warning'></i> Erreur!</h4>
+                                    ".$_SESSION['error']."
+                                    </div>
+                                ";
+                                            unset($_SESSION['error']);
+                                        }
+                                        if(isset($_SESSION['success'])){
+                                            echo "
+                                    <div class='alert alert-success alert-dismissible'>
+                                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                    <h4><i class='icon fa fa-check'></i> Succès!</h4>
+                                    ".$_SESSION['success']."
+                                    </div>
+                                ";
+                                unset($_SESSION['success']);
+                            }
+                            ?>
+                            <div class="form-group">
+                                <label for="">Nom d'Utilisateur</label>
+                                <input type="text" class="form-control" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mot de passe</label>
+                                <input type="password" class="form-control" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input type="submit" class="btn btn-primary" value="S'inscrire" name="submit">
+                            </div>
+                            <a href="login.php" style="color:#e4144d;">Se connecter</a>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>

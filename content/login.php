@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for=""></label>
-                                    <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+                                    <input type="submit" class="btn btn-primary" value="Se connecter" name="submit">
                                 </div>
                                 <a href="register.php" style="color:#e4144d;">S'inscrire</a>
                             </div>

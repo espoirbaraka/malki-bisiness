@@ -136,6 +136,17 @@ $(function(){
     });
 </script>
 <?php
+$today = date('Y-m-d');
+$year = date('Y');
+$mois = date('m');
+if(isset($_GET['year']) AND isset($_GET['month'])){
+    $year = $_GET['year'];
+    $mois = $_GET['month'];
+}
+
+?>
+
+<?php
 $paiement = array();
 $months = array();
 for( $m = 1; $m <= 12; $m++ ) {

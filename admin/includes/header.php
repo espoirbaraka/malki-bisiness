@@ -20,7 +20,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo (!empty($req['Photo'])) ? 'img/'.$req['Photo'] : 'img/user.png'; ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $req['Username']; ?></span>
+              <a href="logout.php"><span class="hidden-xs"><?php echo $req['Username']; ?></span></a>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->

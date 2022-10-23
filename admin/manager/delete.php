@@ -1,5 +1,4 @@
 <?php
-session_start();
 require '../../manager/bd_class.php';
 $event=$_POST['event'];
 
@@ -21,6 +20,16 @@ if($event=='DELETE_PUBLICATION'){
     }
     header("Location: ../publication.php");
 }
+
+if($event=='DELETE_APPROV'){
+    $data=[$_POST['id']];
+    $sql="DELETE FROM t_approvisionnement WHERE CodeApprov=?";
+    if($app->prepare($sql,$data,1)){
+        $_SESSION['success'] = 'Approvisionnement supprimé';
+    }
+    header("Location: ../approvisionnement.php");
+}
+
 
  
 ?>

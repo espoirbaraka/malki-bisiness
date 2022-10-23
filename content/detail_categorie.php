@@ -7,7 +7,7 @@ $req2 = "SELECT * FROM t_categorie_produit";
 $allcateg = $app->fetchPrepared($req2);
 
 $req3 = "SELECT * FROM t_produit WHERE CodeCategorie=$categ ORDER BY Counter DESC";
-$produit = $app->fetchPrepared($req3);
+$produit = $app->fetchPrepared($req3); 
 ?>
 <div class="page-banner" style="background-image: url(assets/uploads/testimonial.jpg)">
     <div class="inner">

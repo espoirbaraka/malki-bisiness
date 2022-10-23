@@ -38,7 +38,7 @@
         <div class="col-xs-12">
           <div class="box" style="overflow: auto;">
             <div class="box-header">
-                <a href="#adduser" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nouveau</a>
+                <a href="#adduser1" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nouveau</a>
                 <button class="btn btn-primary btn sm btn-flat" onclick="imprimer();" style="float: right;">Imprimer</button>
             </div>
             <!-- /.box-header -->

@@ -1,5 +1,5 @@
 <!-- Add -->
-<div class="modal fade" id="adduser">
+<div class="modal fade" id="adduser1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

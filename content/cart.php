@@ -106,7 +106,7 @@ if (isset($_GET['action'])) {
                             <?php
                             if(isset($_SESSION['client'])){
                                 ?>
-                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51KPUgIHLxZc21QViUqPXR1AopPv6mCYjVRLXdqKLLaGzLekBJ4Qzt86hC0TNpgViusua6Nu0VhH8eKZ8l8uenmYI00lTzevcoH" data-amount=<?php echo str_replace("", "", number_format($cout)) ?> data-name="" data-description="Effectuer votre paiement dans le compte OK Market" data-image="" data-currency="usd" data-locale="auto">
+                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51KPUgIHLxZc21QViUqPXR1AopPv6mCYjVRLXdqKLLaGzLekBJ4Qzt86hC0TNpgViusua6Nu0VhH8eKZ8l8uenmYI00lTzevcoH" data-amount=<?php echo str_replace("", "", number_format($cout)) ?> data-name="" data-description="Effectuer votre paiement dans le compte de MALKI BUSINESS" data-image="" data-currency="usd" data-locale="auto">
                                 </script>
                             <?php
                             }else{

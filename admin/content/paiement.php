@@ -62,7 +62,7 @@
                     <tr>
                         <td><?php echo $row['Username']; ?></td>
                         <td><?php echo $row['Montant']; ?> $</td>
-                        <td><?php echo $row['Date_paiement']; ?></td>
+                        <td><?php echo $row['Created_on']; ?></td>
                         <td><?php echo $row['CodeTransaction']; ?></td>
                         <td>
                             <i class='fa fa-edit edit btn btn-primary btn-sm' data-id="<?php echo $row['CodePaiement'] ?>"></i>

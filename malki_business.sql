@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 22 oct. 2022 à 12:02
+-- Généré le :  sam. 22 oct. 2022 à 16:25
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.10
 
@@ -21,6 +21,46 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `malki_business`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `api_client`
+--
+
+CREATE TABLE `api_client` (
+  `id` int(11) NOT NULL,
+  `client_id` varchar(50) NOT NULL,
+  `key_client` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `api_client`
+--
+
+INSERT INTO `api_client` (`id`, `client_id`, `key_client`) VALUES
+(1, 'malekani_project', '20a3238259f91e579d10395baa8498e79c020ec7');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_approvisionnement`
+--
+
+CREATE TABLE `t_approvisionnement` (
+  `CodeApprov` int(11) NOT NULL,
+  `CodeProduit` int(11) NOT NULL,
+  `Cout` float NOT NULL,
+  `Quantite` int(11) NOT NULL,
+  `Created_On` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `t_approvisionnement`
+--
+
+INSERT INTO `t_approvisionnement` (`CodeApprov`, `CodeProduit`, `Cout`, `Quantite`, `Created_On`) VALUES
+(1, 8, 100, 10, '2022-10-22 13:16:35');
 
 -- --------------------------------------------------------
 
@@ -197,14 +237,28 @@ CREATE TABLE `t_user` (
 --
 
 INSERT INTO `t_user` (`CodeUser`, `Username`, `Email`, `Password`, `Photo`, `CodeCategorie`, `Created_on`) VALUES
-(1, 'Baraka', 'esbarakabigega@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 1, '2022-10-10 08:18:35'),
-(2, 'Michael', 'micha@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 2, '2022-02-06 21:55:16'),
+(1, 'Baraka', 'esbarakabigega@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 1, '2022-10-22 10:24:31'),
+(2, 'Michael', 'micka@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 2, '2022-10-22 13:00:17'),
 (4, 'Akili', 'akili@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 1, '2022-02-05 06:30:59'),
-(6, 'Sifa', 'sifa@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 1, '2022-02-05 06:45:09');
+(6, 'Shekinah', 'shekinah@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 1, '2022-10-22 13:23:28'),
+(9, 'Carin', 'carin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 2, '2022-10-22 14:05:27'),
+(10, 'Shekinah', 'malekani@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', 2, '2022-10-22 14:18:52');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `api_client`
+--
+ALTER TABLE `api_client`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `t_approvisionnement`
+--
+ALTER TABLE `t_approvisionnement`
+  ADD PRIMARY KEY (`CodeApprov`);
 
 --
 -- Index pour la table `t_article`
@@ -253,6 +307,18 @@ ALTER TABLE `t_user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `api_client`
+--
+ALTER TABLE `api_client`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `t_approvisionnement`
+--
+ALTER TABLE `t_approvisionnement`
+  MODIFY `CodeApprov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `t_article`
 --
 ALTER TABLE `t_article`
@@ -292,7 +358,7 @@ ALTER TABLE `t_publication`
 -- AUTO_INCREMENT pour la table `t_user`
 --
 ALTER TABLE `t_user`
-  MODIFY `CodeUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `CodeUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

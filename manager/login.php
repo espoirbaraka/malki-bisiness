@@ -31,6 +31,6 @@
 	else{
 		$_SESSION['error'] = 'Entrez vos identifiants de connexion d\'abord';
 	}
-	header('location: ../login.php');
+	header('location: ../cart.php');
 
 ?>

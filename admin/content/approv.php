@@ -78,7 +78,7 @@
                                                         <td><?php echo $row['Quantite']; ?></td>
                                                         <td>
                                                             <i class='fa fa-edit edit btn btn-primary btn-sm' data-id="<?php echo $row['CodeProduit'] ?>"></i>
-                                                            <i class='fa fa-trash delete btn btn-danger btn-sm' data-id="<?php echo $row['CodeProduit'] ?>"></i>
+                                                            <!-- <i class='fa fa-trash delete btn btn-danger btn-sm' data-id="<?php //echo $row['CodeProduit'] ?>"></i> -->
                                                         </td>
                                                     </tr>
                                                 <?php
